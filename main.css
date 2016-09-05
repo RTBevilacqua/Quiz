@@ -1,0 +1,158 @@
+body{
+	box-sizing: border-box;
+	font-family: 'Roboto', helvetica;
+}
+
+ul{
+	list-style: none;
+	padding: 0;
+}
+
+header{
+	text-align: center;
+	border: 1px solid grey;
+	position: fixed; 
+	width: 100%;
+	left: 0;
+    margin: -16px auto 0;
+    background: gainsboro;
+    padding-bottom: 10px;
+
+}
+
+
+
+.question{
+	border: 1px solid grey;
+	width: 500px;
+	padding: 10px;
+	margin: 0 auto;
+	position: relative;
+	top: 267px;
+    right: 199px;
+}
+
+
+.answers{
+	position: relative;
+	border: 1px solid grey;
+	width: 200px;
+	margin: 0 auto;
+    left: 307px;
+    top: 70px;
+	text-align: center;
+	padding: 0;
+
+}
+
+li{
+	border: 1px solid grey;
+	margin: 10px auto;
+	padding: 10px 0;
+	width: 150px;
+	text-align: center;
+}
+
+
+
+
+
+
+.intro{
+	border: 1px solid grey;
+	margin: 0 auto;
+	text-align: center;
+	position: absolute;
+	top: 132px;
+	bottom: 118px;
+    left: 0;
+    padding: 150px;
+	z-index: 100;
+	background: grey;
+
+}
+
+
+/*----------------Response----------------*/
+.right-response{
+	border: 1px solid grey;
+	padding: 120px 10px;
+	background: blue;
+	text-align: center;
+    width: 50%;
+    position: relative;
+    top: -189px;
+    margin: auto;
+}
+
+.wrong-response{
+
+
+}
+/*
+.questionOne{
+	position: relative;
+	top: 260px;
+	left: 50px;
+	padding: 20px 10px;
+
+}
+
+.questionOneText{
+	padding: 25px 0 25px 10px;
+}
+
+.answerOne{
+	position: relative;
+	left: -102px;
+	top: 13px;
+	padding: 20px 10px;
+}
+*/
+
+/*--------------FOOTER-----------------*/
+footer{
+	text-align: center;
+	border: 1px solid grey; 
+	width: 100%;
+   	position: fixed;
+   	left: 0;
+   	bottom: 0;
+    background: gainsboro;
+    clear: both;
+
+}
+/*------------Number count-------------*/
+.questionCount{
+	position: relative;
+	text-align: center;
+	
+}
+
+.answerCount{
+	position: relative;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
