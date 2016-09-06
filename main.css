@@ -42,6 +42,7 @@ header{
     top: 70px;
 	text-align: center;
 	padding: 0;
+	cursor: pointer;
 
 }
 
@@ -85,30 +86,9 @@ li{
     margin: auto;
 }
 
-.wrong-response{
 
 
-}
-/*
-.questionOne{
-	position: relative;
-	top: 260px;
-	left: 50px;
-	padding: 20px 10px;
 
-}
-
-.questionOneText{
-	padding: 25px 0 25px 10px;
-}
-
-.answerOne{
-	position: relative;
-	left: -102px;
-	top: 13px;
-	padding: 20px 10px;
-}
-*/
 
 /*--------------FOOTER-----------------*/
 footer{
@@ -133,6 +113,8 @@ footer{
 	position: relative;
 	text-align: center;
 }
+
+
 
 
 

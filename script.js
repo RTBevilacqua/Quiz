@@ -4,24 +4,21 @@ $(document).ready(function(){
 console.log('ready');
 
 
-var questionNumber = 0;
-var guess = $('.guess').val(); 
-var finalAnswer = $('answers[questionNumber]').val();
+var counter = 0;
+var guess = $('.guess').val();
+var finalAnswer = $('answers[counter]');
 
 
 /*---------------- Intro ---------------*/
 $('.introButton').click(function(){
 $('.intro').fadeOut('slow');
 $('.question').append('<div>' + questions[0].question + '</div>');
-var questionNumber = 0;
-var choicesTotal = questions[questionNumber].choices.length;
+var counter = 0;
+var choicesTotal = questions[counter].choices.length;
         for (var i = 0; i < choicesTotal; i++) {
-        	$('ul').append('<li><input type="radio" class="guess">' + questions[questionNumber].choices[i] + '</li>');
+        	$('ul').append('<li>' + questions[counter].choices[i] + '</li>');
         };
 });
-
-console.log(guess);
-
 
 
 /*-----------------------------Answers and Questions------------------------------*/
@@ -61,20 +58,18 @@ $('.submit').on('click', function() {
 	event.preventDefault();
 	$('li').hide();
 	$('.question div').hide();
-	questionNumber++
-	/*---------------------------- Adds Answers -------------------------*/
-	var choicesTotal = questions[questionNumber].choices.length;
+	/*---------------------------- Adds New Choices -------------------------*/
+	counter++
+	var choicesTotal = questions[counter].choices.length;
 	
         for (var i = 0; i < choicesTotal; i++) {
-        	$('ul').append('<li><input type="radio" class="guess">' + questions[questionNumber].choices[i] + '</li>');
+        	$('ul').append('<li>' + questions[counter].choices[i] + '</li>');
         };
-        /*---------------------------- Adds Questions -------------------------*/
-        	$('.question').append('<div>' + questions[questionNumber].question) + '<div>';
+        /*---------------------------- Adds New Questions -------------------------*/
+        	$('.question').append('<div>' + questions[counter].question) + '<div>';
 
         /*---------------------------- Adds Counter -------------------------*/	
-        console.log(finalAnswer);
-        console.log(guess);
-     guess === finalAnswer ? alert('yes') : alert('no');
+     
 
 	// function update(j) {
 	// 	var n = parseInt(j.text(),10);
@@ -82,6 +77,17 @@ $('.submit').on('click', function() {
 	// };
 
 // update($('.question-number-count')) update($('.answer-number-count')) : update($('.question-number-count')); 
+
+
+//This gets names from click
+$('ul li').click(function() {
+	var text = $(this).text();
+	text === answers ? alert('yes') : alert('no');
+	console.log(text);
+	console.log(answers);
+
+	
+})
 });
 
 
