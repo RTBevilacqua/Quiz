@@ -23,11 +23,12 @@ header{
 
 
 .question{
+	position: relative;
+
 	border: 1px solid grey;
 	width: 500px;
 	padding: 10px;
 	margin: 0 auto;
-	position: relative;
 	top: 267px;
     right: 199px;
 }

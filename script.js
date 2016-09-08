@@ -9,9 +9,8 @@ $('.response').hide();
 
 
 
-/*---------------- Intro ---------------*/
+/*-----------------------------Intro------------------------------*/
 $('.introButton').click(function() {
-	console.log('test');
 	$('.intro').fadeOut('slow');
 	$('.question').append('<div>' + questions[0].question + '</div>');
 	var choicesTotal = questions[counter].choices.length;
@@ -53,7 +52,12 @@ var answers = ["Steven Spielberg", "Robert Zemeckis", "Tim Burton", "Jim Henson"
 /*---------------------------- Click On Answer -------------------------*/  
 $('body').on('click', 'ul li', function(){
 	var text = $(this).text();
-	$('.response').show()
+	//Prevents other responses from showing when choices are clicked
+	if ( $('.response').css('display') !== 'none' ){
+    	return;
+	}
+	$('.response').show();
+	//appens response and adds score
 	if (text === answers[counter]) {
 		score++;
 		counter++;
@@ -73,31 +77,24 @@ $('.next').on('click', function() {
 	$('.response h2').hide();
 	$('li').hide();
 	$('.question div').hide();
+	/*---------------------------- Final Score Window -------------------------*/
+	if (!questions[counter]) {
+		console.log('if');
+		$('ul').hide();
+		$('.response').show();
+		$('.response').append('<h2> You got ' + score +' answers right</h2>');
+		return;
+	}
 	/*---------------------------- Adds New Choices -------------------------*/
-	// counter++;
 	var choicesTotal = questions[counter].choices.length;
         for (var i = 0; i < choicesTotal; i++) {
         	$('ul').append('<li>' + questions[counter].choices[i] + '</li>');
         }
     /*---------------------------- Adds New Questions -------------------------*/
-     $('.question').append('<div>' + questions[counter].question) + '<div>';
-     
-     	
-
+    $('.question').append('<div>' + questions[counter].question) + '<div>';   	
+	/*---------------------------- Question Counter-------------------------*/
 	$('.question-number-count').html(counter + 1);
-
 });
-
-/*---------------------------- Results-------------------------*/
-if (questions.choices === undefined) {
-	console.log('yes');
-}
-
-	// $('ul').hide();
-	// $('.response').show();
-	// $('.response')append('<h2> You got ' + score +' answers right</h2>');
-
-
 
 
 /*--------------End Document.ready---------------*/
