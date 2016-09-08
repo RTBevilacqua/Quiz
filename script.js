@@ -1,23 +1,23 @@
 'use strict'
 
 $(document).ready(function(){
-console.log('ready');
-
-
 var counter = 0;
+var questionCounter = 1;
 var guess = $('.guess').val();
-var finalAnswer = $('answers[counter]');
+var score = 0;
+$('.response').hide();
+
 
 
 /*---------------- Intro ---------------*/
-$('.introButton').click(function(){
-$('.intro').fadeOut('slow');
-$('.question').append('<div>' + questions[0].question + '</div>');
-var counter = 0;
-var choicesTotal = questions[counter].choices.length;
-        for (var i = 0; i < choicesTotal; i++) {
-        	$('ul').append('<li>' + questions[counter].choices[i] + '</li>');
-        };
+$('.introButton').click(function() {
+	console.log('test');
+	$('.intro').fadeOut('slow');
+	$('.question').append('<div>' + questions[0].question + '</div>');
+	var choicesTotal = questions[counter].choices.length;
+    for (var i = 0; i < choicesTotal; i++) {
+    	$('ul').append('<li>' + questions[counter].choices[i] + '</li>');
+    }
 });
 
 
@@ -49,55 +49,53 @@ var questions = [
 var answers = ["Steven Spielberg", "Robert Zemeckis", "Tim Burton", "Jim Henson", "Stanley Kubrick"];
 
 
-//Tell user if he/she got it right or wrong
-	// If wrong tell user the correct answer.
 
-//submit starts new question and answers
+/*---------------------------- Click On Answer -------------------------*/  
+$('body').on('click', 'ul li', function(){
+	var text = $(this).text();
+	$('.response').show()
+	if (text === answers[counter]) {
+		score++;
+		counter++;
+		$('.answer-number-count').html(score);
+		
+		$('.response').append('<h2>Very good!</h2>');
+	}else{
+		$('.response').append('<h2>Oh noooooo the correct answer is ' + answers[counter] + '</h2>');
+		counter++;	
+	} 
 
-$('.submit').on('click', function() {
-	event.preventDefault();
+});
+
+	/*---------------------------- Click Next Button -------------------------*/
+$('.next').on('click', function() { 
+	$('.response').hide();
+	$('.response h2').hide();
 	$('li').hide();
 	$('.question div').hide();
 	/*---------------------------- Adds New Choices -------------------------*/
-	counter++
+	// counter++;
 	var choicesTotal = questions[counter].choices.length;
-	
         for (var i = 0; i < choicesTotal; i++) {
         	$('ul').append('<li>' + questions[counter].choices[i] + '</li>');
-        };
-        /*---------------------------- Adds New Questions -------------------------*/
-        	$('.question').append('<div>' + questions[counter].question) + '<div>';
-
-        /*---------------------------- Adds Counter -------------------------*/	
+        }
+    /*---------------------------- Adds New Questions -------------------------*/
+     $('.question').append('<div>' + questions[counter].question) + '<div>';
      
+     	
 
-	// function update(j) {
-	// 	var n = parseInt(j.text(),10);
-	// 	j.text(n + 1);
-	// };
+	$('.question-number-count').html(counter + 1);
 
-// update($('.question-number-count')) update($('.answer-number-count')) : update($('.question-number-count')); 
-
-
-//This gets names from click
-$('ul li').click(function() {
-	var text = $(this).text();
-	text === answers ? alert('yes') : alert('no');
-	console.log(text);
-	console.log(answers);
-
-	
-})
 });
 
+/*---------------------------- Results-------------------------*/
+if (questions.choices === undefined) {
+	console.log('yes');
+}
 
-
-
-/*------------------ logs answers -----------------*/
-
-
-
-
+	// $('ul').hide();
+	// $('.response').show();
+	// $('.response')append('<h2> You got ' + score +' answers right</h2>');
 
 
 
