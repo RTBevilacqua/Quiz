@@ -3,10 +3,8 @@
 $(document).ready(function(){
 var counter = 0;
 var questionCounter = 1;
-var guess = $('.guess').val();
 var score = 0;
 $('.response').hide();
-
 
 
 /*-----------------------------Intro------------------------------*/
@@ -48,7 +46,6 @@ var questions = [
 var answers = ["Steven Spielberg", "Robert Zemeckis", "Tim Burton", "Jim Henson", "Stanley Kubrick"];
 
 
-
 /*---------------------------- Click On Answer -------------------------*/  
 $('body').on('click', 'ul li', function(){
 	var text = $(this).text();
@@ -57,7 +54,7 @@ $('body').on('click', 'ul li', function(){
     	return;
 	}
 	$('.response').show();
-	//appens response and adds score
+	//appends response and adds score
 	if (text === answers[counter]) {
 		score++;
 		counter++;
@@ -79,10 +76,16 @@ $('.next').on('click', function() {
 	$('.question div').hide();
 	/*---------------------------- Final Score Window -------------------------*/
 	if (!questions[counter]) {
-		console.log('if');
-		$('ul').hide();
+		$('.answers').hide();
+		$('.next').hide();
+		$('.question').hide();
 		$('.response').show();
-		$('.response').append('<h2> You got ' + score +' answers right</h2>');
+		$('.response').append('<h2> You got ' + score +' answers right!</h2>');
+		//puts response in center of page
+		$('.response').css('right', '0');
+		$('.response').css('left', '0');
+		$('.response').css('top', '265px');
+		$('.response h2').css('bottom', '-11px');
 		return;
 	}
 	/*---------------------------- Adds New Choices -------------------------*/
@@ -96,9 +99,7 @@ $('.next').on('click', function() {
 	$('.question-number-count').html(counter + 1);
 });
 
-
-/*--------------End Document.ready---------------*/
-});
+});/*--------------End Document.ready---------------*/
 
 
 
