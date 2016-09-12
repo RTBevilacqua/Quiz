@@ -1,9 +1,11 @@
 body{
+	
 	box-sizing: border-box;
 	font-family: 'Roboto', helvetica;
-	background: url('https://i.ytimg.com/vi/Zcnmabpt77M/maxresdefault.jpg');
+	background: url('Images/jaws.jpg');
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: cover;    
+	background-position-y: 33px;
 }
 
 
@@ -67,19 +69,19 @@ li:hover{
 /*----------------Intro----------------*/
 video{
 	position: relative;
-	bottom: 110px;
+	bottom: 130px;
 }
 
 .intro h2{
 	position: relative;
-	bottom: 120px;
+	bottom: 147px;
 	color: white;
 }
 
 .introButton{
 	text-align: center;
 	position: relative;
-    bottom: 125px;
+    bottom: 152px;
     padding: 5px 100px;
 }
 
