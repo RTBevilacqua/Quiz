@@ -38,7 +38,7 @@ var questions = [
 		choices: ["Orson Welles", "George Lucas", "Charles Chaplin", "Jim Henson"]
 	},
 	{
-		question: "This director is still considered one of the masters of cinema. He has directed unforgetable movies like: Dr. Strangelove, 2001: A Space Odyssey, A Clockwork Orange, and The Shining.",
+		question: "This director is still considered one of the masters of cinema. He has directed unforgettable movies like: Dr. Strangelove, 2001: A Space Odyssey, A Clockwork Orange, and The Shining.",
 		choices: ["Roman Polanski", "Stanley Kubrick", "Martin Scorsese", "Peter Jackson"]
 	}
 
