@@ -22,11 +22,11 @@ $('.introButton').click(function() {
 /*-----------------------------Answers and Questions------------------------------*/
 var questions = [
 	{
-		question: "Undoubtedly one of the most influential film personalities in the history of film, This director is perhaps Hollywood\'s best known director and one of the wealthiest filmmakers in the world. This director has countless big-grossing, critically acclaimed credits to his name, such as: Jaws, Indiana Jones, and Jurassic Park.",
+		question: "Undoubtedly one of the most influential film personalities in the history of film. This director is perhaps Hollywood\'s best known director and one of the wealthiest filmmakers in the world. This director has countless big-grossing, critically acclaimed credits to his name, such as: Jaws, Indiana Jones, and Jurassic Park.",
 		choices: ["Steven Spielberg", "Tim Burton", "Akira Kurosawa", "Jim Henson"]
 	},
 	{
-		question: "A whiz-kid with special effects, this directors from the Spielberg camp of film-making His earlier films tended to be zany comedy that contained special effect vehicles such as Who Framed Roger Rabbit and Back to the Future. His later films have become more serious, with the hugely successful film Forrest Gump.",
+		question: "A whiz-kid with special effects, this director is from the Spielberg camp of film-making. His earlier films tended to be zany comedies that contained special effect vehicles such as Who Framed Roger Rabbit and Back to the Future. His later movies have become more serious like the hugely successful film Forrest Gump.",
 		choices: ["Tom Hanks", "George Lucas", "Robert Zemeckis", "Oliver Stone"]
 	},
 	{
