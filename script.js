@@ -59,6 +59,7 @@ $('body').on('click', 'ul li', function(){
     	return;
 	}
 	$('.response').show();
+	$('.answers').hide();
 	//appends response and adds score
 	if (text === answers[counter]) {
 		score++;
@@ -79,6 +80,7 @@ $('.next').on('click', function() {
 	$('.response h2').hide();
 	$('li').hide();
 	$('.question div').hide();
+	$('.answers').show();
 	$('body').css('background-image', "url(" + images[counter] + ')');
 
 
