@@ -3,8 +3,10 @@
 $(document).ready(function(){
 var counter = 0;
 var questionCounter = 1;
+var guess = $('.guess').val();
 var score = 0;
 $('.response').hide();
+
 
 
 /*-----------------------------Intro------------------------------*/
@@ -45,6 +47,11 @@ var questions = [
 
 var answers = ["Steven Spielberg", "Robert Zemeckis", "Tim Burton", "Jim Henson", "Stanley Kubrick"];
 
+var images = ["https://i.ytimg.com/vi/Zcnmabpt77M/maxresdefault.jpg", "http://www.walldevil.com/wallpapers/a66/desktop-popular-movie-fun-packs-desktops-howto-back-backdrops-future-original.jpg",
+				"https://images3.alphacoders.com/716/71625.jpg", "http://orig12.deviantart.net/450f/f/2015/214/a/5/the_dark_crystal_wallpaper_by_aemiliuslives-d93ttep.jpg",
+				"https://images6.alphacoders.com/425/425634.jpg"]
+
+
 
 /*---------------------------- Click On Answer -------------------------*/  
 $('body').on('click', 'ul li', function(){
@@ -54,7 +61,7 @@ $('body').on('click', 'ul li', function(){
     	return;
 	}
 	$('.response').show();
-	//appends response and adds score
+	//appens response and adds score
 	if (text === answers[counter]) {
 		score++;
 		counter++;
@@ -76,18 +83,13 @@ $('.next').on('click', function() {
 	$('.question div').hide();
 	/*---------------------------- Final Score Window -------------------------*/
 	if (!questions[counter]) {
-		$('.answers').hide();
-		$('.next').hide();
-		$('.question').hide();
+		console.log('if');
+		$('ul').hide();
 		$('.response').show();
-		$('.response').append('<h2> You got ' + score +' answers right!</h2>');
-		//puts response in center of page
-		$('.response').css('right', '0');
-		$('.response').css('left', '0');
-		$('.response').css('top', '265px');
-		$('.response h2').css('bottom', '-11px');
+		$('.response').append('<h2> You got ' + score +' answers right</h2>');
 		return;
 	}
+	$('body').css('background-image', "url(" + images[counter] + ')');
 	/*---------------------------- Adds New Choices -------------------------*/
 	var choicesTotal = questions[counter].choices.length;
         for (var i = 0; i < choicesTotal; i++) {
@@ -99,7 +101,9 @@ $('.next').on('click', function() {
 	$('.question-number-count').html(counter + 1);
 });
 
-});/*--------------End Document.ready---------------*/
+
+/*--------------End Document.ready---------------*/
+});
 
 
 
