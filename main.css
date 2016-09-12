@@ -1,11 +1,13 @@
 body{
-	
+	margin: 0 auto;
 	box-sizing: border-box;
 	font-family: 'Roboto', helvetica;
 	background: url('Images/jaws.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;    
 	background-position-y: 33px;
+
+
 }
 
 
@@ -69,19 +71,22 @@ li:hover{
 /*----------------Intro----------------*/
 video{
 	position: relative;
-	bottom: 130px;
+	bottom: 100px;
+    width: 800px;
 }
 
 .intro h2{
-	position: relative;
-	bottom: 147px;
+    margin: 0 auto;
+    position: relative;
+    bottom: 88px;
+    width: 80%;
 	color: white;
 }
 
 .introButton{
 	text-align: center;
 	position: relative;
-    bottom: 152px;
+    bottom: 60px;
     padding: 5px 100px;
 }
 
